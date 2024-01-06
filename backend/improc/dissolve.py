@@ -3,7 +3,7 @@ import numpy as np
 """
 dissolve.py
     functions common to all dissolve processing
-"""
+""" 
 
 def uniform_closs_dissolve(f: np.ndarray, g: np.ndarray, t: float) -> np.ndarray:
     """
@@ -21,15 +21,14 @@ def uniform_closs_dissolve(f: np.ndarray, g: np.ndarray, t: float) -> np.ndarray
     if f.shape != g.shape:
         raise ValueError("images don't have the same size")
 
-    row, col = f.shape
+    row, col, cchannel = f.shape
 
-    output: np.ndarray = np.zeros(row, col, dtype=f.dtype)
+    output: np.ndarray = np.zeros((row, col, cchannel), dtype=f.dtype)
 
     for i in range(row):
         for j in range(col):
             output[i, j] = (1 - t) * f[i, j] + t * g[i, j]
 
     return output
-    
 
     
