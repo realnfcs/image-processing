@@ -5,7 +5,7 @@ dissolve.py
     functions common to all dissolve processing
 """ 
 
-def nonUniform_cross_dissolve(f:np.ndarray, g:np.ndarray, t:np.ndarray) -> np.ndarray:
+def non_uniform_cross_dissolve(f:np.ndarray, g:np.ndarray, t:np.ndarray) -> np.ndarray:
 
     """
     Apply the uniform closs dissolve with two image in a output one
@@ -22,8 +22,8 @@ def nonUniform_cross_dissolve(f:np.ndarray, g:np.ndarray, t:np.ndarray) -> np.nd
     if f.shape != g.shape:
         raise ValueError("images don't have the same size")
     
-    row, col , _ = f.shape
-    output: np.ndarray = np.zeros((row, col, 3), dtype = f.dtype)
+    row, col , cchanell = f.shape
+    output: np.ndarray = np.zeros((row, col, cchanell), dtype = f.dtype)
 
     for i in range(row):
         for j in range(col):    

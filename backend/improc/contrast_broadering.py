@@ -1,12 +1,6 @@
 import numpy as np
 import cv2 as cv
 
-img = "/home/andrey/PDI_project/imagens/lena_gray_512.tif"
-img_test = cv.imread(img)
-smin = 100
-smax = 240
-
-
 def contrast_broadering(i:np.ndarray, smin:int, smax:int) -> np.ndarray:
     """
     Applies contrast broadening to the input image and returns it with the changes
@@ -34,16 +28,6 @@ def contrast_broadering(i:np.ndarray, smin:int, smax:int) -> np.ndarray:
     output = np.uint8(output)
 
     return output
-
-
-output = contrast_broadering(img_test, smin, smax)
-
-cv.imshow("image",img_test)
-cv.imshow("Output",output)
-cv.waitKey(0)
-cv.destroyAllWindows()
-
-
 
 
 
