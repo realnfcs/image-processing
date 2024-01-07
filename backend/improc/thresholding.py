@@ -9,6 +9,18 @@ t = 100
 
 def thresholding(f:np.ndarray, t:int) -> np.ndarray:
 
+    """
+    Applies the thresholding to the image and returns the result
+ 
+    Args:
+      f : (array_like Shape (m,n)) first image 
+      t: (integer number) the threshold number
+           
+    Returns
+      output: (array_like Shape (m,n)) the output image of thresholding process
+      
+    """
+
     row, col, _ = f.shape
 
     output:np.ndarray = np.zeros((row,col,3), dtype=f.dtype)

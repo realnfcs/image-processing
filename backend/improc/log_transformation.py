@@ -6,6 +6,18 @@ test = "/home/andrey/PDI_project/imagens/fisico.tif"
 img = cv.imread(test)
 
 def log_transformation(f:np.ndarray, c:float) -> np.ndarray:
+
+    """
+    Applies the logarithmic transform to the image and returns the result
+ 
+    Args:
+      f : (array_like Shape (m,n)) first image 
+      c: (float number) adjustment parameter
+
+    Returns
+      output: (array_like Shape (m,n)) the output image of logarithmic transform process
+      
+    """
     
     row, col, _ = f.shape
 

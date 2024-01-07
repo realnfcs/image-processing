@@ -6,6 +6,17 @@ img_test = cv.imread(img)
 
 def negative(f:np.ndarray) -> np.ndarray:
 
+    """
+    Applies the negative transform to the image and returns the result
+ 
+    Args:
+      f : (array_like Shape (m,n)) first image 
+           
+    Returns
+      output: (array_like Shape (m,n)) the output image of negative transform process
+      
+    """
+
     row, col, _ = f.shape
     l = np.max(f)
 
