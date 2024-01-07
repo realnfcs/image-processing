@@ -17,6 +17,7 @@ def thresholding(f:np.ndarray, t:int) -> np.ndarray:
       t: (integer number) the threshold number
            
     Returns
+    
       output: (array_like Shape (m,n)) the output image of thresholding process
       
     """

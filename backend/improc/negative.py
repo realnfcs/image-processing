@@ -13,6 +13,7 @@ def negative(f:np.ndarray) -> np.ndarray:
       f : (array_like Shape (m,n)) first image 
            
     Returns
+    
       output: (array_like Shape (m,n)) the output image of negative transform process
       
     """

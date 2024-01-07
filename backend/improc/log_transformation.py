@@ -15,6 +15,7 @@ def log_transformation(f:np.ndarray, c:float) -> np.ndarray:
       c: (float number) adjustment parameter
 
     Returns
+    
       output: (array_like Shape (m,n)) the output image of logarithmic transform process
       
     """

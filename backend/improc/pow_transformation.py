@@ -16,10 +16,12 @@ def pow_transformation(f:np.ndarray, c:int, y:float) -> np.ndarray:
  
     Args:
       f : (array_like Shape (m,n)) first image 
-      t: (integer number) the threshold number
-           
+      c: (integer number) adjustment parameter
+      y: (float number) power parameter
+
     Returns
-      output: (array_like Shape (m,n)) the output image of thresholding process
+
+      output: (array_like Shape (m,n)) the output image of power transform process
       
     """
 
