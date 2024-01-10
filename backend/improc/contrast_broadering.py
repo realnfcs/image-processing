@@ -1,5 +1,9 @@
 import numpy as np
-import cv2 as cv
+
+"""
+contrast_broadering.py
+    function for constract broadering process
+""" 
 
 def contrast_broadering(i:np.ndarray, smin:int, smax:int) -> np.ndarray:
     """

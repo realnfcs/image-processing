@@ -6,7 +6,6 @@ dissolve.py
 """ 
 
 def non_uniform_cross_dissolve(f:np.ndarray, g:np.ndarray, t:np.ndarray) -> np.ndarray:
-
     """
     Apply the uniform closs dissolve with two image in a output one
  
