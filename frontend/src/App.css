@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 10px;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media screen and (max-width: 775px) {
+  main {
+    margin-left: 100px;
+  }
+}
