@@ -5,7 +5,7 @@ function NavBar() {
     <div>
       <nav>
         <div className="nav-container">
-          <p>Navbar</p>
+          {/* <p>Navbar</p> */}
         </div>
       </nav>
     </div>
