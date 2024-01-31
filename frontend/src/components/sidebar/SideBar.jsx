@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import './SideBar.css'
 
@@ -63,9 +63,9 @@ function SideBar() {
          {sidebarData.map((item, index) => {
             return (
               <li key={index} className="sidebar-items">
-                <NavLink to={item.path}>
+                <Link to={item.path}>
                   <span>{item.title}</span>
-                </NavLink>
+                </Link>
               </li>
             )
          })}

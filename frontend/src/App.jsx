@@ -1,23 +1,43 @@
 import './App.css'
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import SideBar from './components/sidebar/SideBar.jsx'
 import NavBar from './components/navbar/NavBar.jsx'
+import Home from  './components/home/Home.jsx'
+import AdaptiveContrast from './components/adaptiveContrast/AdaptiveContrast.jsx'
+import Algebraic from './components/algebraic/Algebraic.jsx'
+import Convolution from './components/convolution/Convolution.jsx'
+import EdgeDetectention from './components/edgeDetectention/EdgeDetectention.jsx'
+import Filters from './components/filters/Filters.jsx'
+import Geometric from './components/geometric/Geometric.jsx'
+import Histogram from './components/histogram/Histogram.jsx'
+import IntensityTransformation from './components/intensityTransformation/IntensityTransformation.jsx'
+import Sharpening from './components/sharpening/Sharpening.jsx'
 
 function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
+        <SideBar />
+      <Routes>
+        <Route path='/' element={ <Home /> } />
+        <Route path='/adaptive-contrast' element={ <AdaptiveContrast /> } />
+        <Route path='/algebraic' element={ <Algebraic /> } />
+        <Route path='/convolution' element={ <Convolution /> } />
+        <Route path='/edge-detectention' element={ <EdgeDetectention /> } />
+        <Route path='/filters' element={ <Filters /> } />
+        <Route path='/geometric' element={ <Geometric /> } />
+        <Route path='/histogram' element={ <Histogram />} />
+        <Route path='/intensity-transformations' element={ <IntensityTransformation /> } />
+        <Route path='/sharpening' element={ <Sharpening /> } />
+      </Routes>
+      </BrowserRouter>
 
       <NavBar />
-      <SideBar />
 
-      <main>
-        <h1> Hello World </h1>
-        <p>
-          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
-        </p>
-      </main>
-    </div>
+   </div>
   )
 }
 
