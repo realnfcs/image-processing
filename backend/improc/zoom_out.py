@@ -1,7 +1,7 @@
 import numpy as np
 import cv2 as cv
 
-test = "/home/andrey/Pasta_PDI/imagens/lena_gray_512.tif"
+test = "./images/lena_gray_256.tif"
 img = cv.imread(test)
 
 factor = 2
@@ -37,3 +37,4 @@ cv.imshow("image",img)
 cv.imshow("Output",output)
 cv.waitKey(0)
 cv.destroyAllWindows()
+print(img.shape, output.shape)

@@ -1,14 +1,5 @@
 import numpy as np
 import cv2 as cv
-import random
-
-
-test = "/home/andrey/Pasta_PDI/imagens/legumes.tiff"
-img = cv.imread(test)
-
-
-factor = 1
-
 
 def zoom_in_replication(img:np.ndarray, factor:float)->np.ndarray:
     row,col,ch = img.shape
@@ -34,8 +25,8 @@ def zoom_in_replication(img:np.ndarray, factor:float)->np.ndarray:
 
     
     return output      
-        
 
+img = cv.imread("./images/lena_gray_256.tif")
 output = zoom_in_replication(img,3)
 
 cv.imshow("image",img)
