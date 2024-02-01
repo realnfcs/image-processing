@@ -1,8 +1,4 @@
 import numpy as np
-import cv2 as cv
-
-img = "/home/andrey/PDI_project/imagens/legumes.tiff"
-img_test = cv.imread(img)
 
 def negative(f:np.ndarray) -> np.ndarray:
 
@@ -30,12 +26,6 @@ def negative(f:np.ndarray) -> np.ndarray:
 
     return output
 
-output = negative(img_test)
-
-cv.imshow("image",img_test)
-cv.imshow("Output",output)
-cv.waitKey(0)
-cv.destroyAllWindows()
 
 
 

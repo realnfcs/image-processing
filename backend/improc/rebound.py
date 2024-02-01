@@ -1,11 +1,20 @@
 import numpy as np
 import cv2 as cv
 
-
-test = "/home/andrey/PDI_project/imagens/legumes.tiff"
-img = cv.imread(test)
-
 def rebound(f:np.ndarray,type:int) -> np.ndarray:
+
+    """
+    Apply the rebound in the image and returns the result
+ 
+    Args:
+      f : (array_like Shape (m,n)) first image 
+      type: (integer number) the parameter that defines the type of the rebound
+    Returns
+
+      output: (array_like Shape (m,n)) the output image of rebound process
+      
+    """
+      
     row = f.shape[0]
     col = f.shape[1]
     ch = f.shape[2]
@@ -26,13 +35,4 @@ def rebound(f:np.ndarray,type:int) -> np.ndarray:
                 print("error")
 
     output = np.uint8(output)
-    return output
-
-output = rebound(img,2)
-            
-
-
-cv.imshow("image",img)
-cv.imshow("Output",output)
-cv.waitKey(0)
-cv.destroyAllWindows()
+    return output 

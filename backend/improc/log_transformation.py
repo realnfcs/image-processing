@@ -1,14 +1,10 @@
 import numpy as np
-import cv2 as cv
 
-
-test = "/home/andrey/PDI_project/imagens/fisico.tif"
-img = cv.imread(test)
 
 def log_transformation(f:np.ndarray, c:float) -> np.ndarray:
 
     """
-    Applies the logarithmic transform to the image and returns the result
+    Apply the logarithmic transform to the image and returns the result
  
     Args:
       f : (array_like Shape (m,n)) first image 
@@ -31,9 +27,3 @@ def log_transformation(f:np.ndarray, c:float) -> np.ndarray:
 
     return output
 
-output = log_transformation(img,  40)
-
-cv.imshow("image",img)
-cv.imshow("output",output)
-cv.waitKey(0)
-cv.destroyAllWindows()

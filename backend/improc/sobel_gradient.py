@@ -1,15 +1,20 @@
 import numpy as np
-import cv2 as cv
 
-
-test = "/home/andrey/Pasta_PDI/imagens/lena_gray_512.tif"
-img_load = cv.imread(test)
-
-img = cv.cvtColor(img_load,cv.COLOR_RGB2GRAY)
-
-t = 50
 
 def sobel_gradient(f:np.ndarray, t:int) -> np.ndarray:
+
+    """
+    Implements the sobel gradient and returns the result
+ 
+    Args:
+      f : (array_like Shape (m,n)) first image 
+      t: (integer number) the parameter that defines the threshold
+    Returns
+
+      output: (array_like Shape (m,n)) the output image of rotation process
+      
+    """
+
     f = f.astype(np.float64)
     row,col = f.shape
 
@@ -33,19 +38,12 @@ def sobel_gradient(f:np.ndarray, t:int) -> np.ndarray:
             if np.max(output[i,j]) < t:
                 output[i,j] = 0
             
+            else:
+                output[i,j] = 255
+            
 
-    output = np.uint8(output)
+    #output = np.uint8(output)
 
     return output
-
-output = sobel_gradient(img,t)
-
-
-
-cv.imshow("image",img)
-cv.imshow("Output",output)
-cv.waitKey(0)
-cv.destroyAllWindows()
-
 
 

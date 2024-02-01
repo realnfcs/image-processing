@@ -1,16 +1,11 @@
 import numpy as np
-import cv2 as cv
 
 
-img = "/home/andrey/PDI_project/imagens/legumes.tiff"
-img_test = cv.imread(img)
-
-t = 100
 
 def thresholding(f:np.ndarray, t:int) -> np.ndarray:
 
     """
-    Applies the thresholding to the image and returns the result
+    Apply the thresholding to the image and returns the result
  
     Args:
       f : (array_like Shape (m,n)) first image 
@@ -36,10 +31,4 @@ def thresholding(f:np.ndarray, t:int) -> np.ndarray:
 
     return output
 
-output = thresholding(img_test,t)
-
-cv.imshow("image",img_test)
-cv.imshow("Output",output)
-cv.waitKey(0)
-cv.destroyAllWindows()
             

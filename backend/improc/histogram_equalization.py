@@ -1,13 +1,17 @@
 import numpy as np
 import cv2 as cv
-import matplotlib.pyplot as plt
-
-test = "/home/andrey/PDI_project/imagens/lena_gray_512.tif"
-img = cv.imread(test)
-
-grayscale_img = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 
 def histogram_equalization(f:np.ndarray) -> np.ndarray:
+    """
+    Apply the histogram equalization to the histogram of the inserted image
+ 
+    Args:
+      f : (array_like Shape (m,n)) first image    
+    Returns
+      output: (array_like Shape (m,n)) the output image of histogram equalization process
+                                  
+    """
+
     bit_depth = f.dtype.itemsize * 8
 
     L = np.power(2,bit_depth)
@@ -27,30 +31,11 @@ def histogram_equalization(f:np.ndarray) -> np.ndarray:
     
     for i in range(row):
         for j in range(col):
-            output[i,j] = eqh[f[i,j]] #o erro está no f[i,j] quando a imagem tem mais de 256 pixels na linha o codigo nao funciona
-    
+            output[i,j] = eqh[f[i,j]] 
     
     return output
 
 
-output = histogram_equalization(grayscale_img)
 
-hist_img = cv.calcHist([img],[0],None,[256],[0,256])
-hist_output = cv.calcHist([output],[0],None,[256],[0,256])
-
-fig, axs = plt.subplots(1, 2, figsize=(12, 5))
-
-axs[0].plot(hist_img, color='blue')
-axs[0].set_title('Histograma Original')
-axs[1].plot(hist_output, color='red')
-axs[1].set_title('Histograma Equalizado')
-
-plt.tight_layout()
-plt.show()
-
-cv.imshow("image",grayscale_img)
-cv.imshow("output",output)
-cv.waitKey(0)
-cv.destroyAllWindows()
 
 
