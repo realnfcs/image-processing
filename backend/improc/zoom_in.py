@@ -1,7 +1,21 @@
 import numpy as np
-import cv2 as cv
+
 
 def zoom_in_replication(img:np.ndarray, factor:float)->np.ndarray:
+
+    """
+    Apply the zoom in the image and returns the results
+ 
+    Args:
+      img : (array_like Shape (m,n)) first image 
+      factor: (float number) the ampliation factor
+           
+    Returns
+    
+      output: (array_like Shape (m,n)) the output image of zoom in process
+      
+    """
+
     row,col,ch = img.shape
     
     new_row = int(row * factor)
@@ -25,11 +39,4 @@ def zoom_in_replication(img:np.ndarray, factor:float)->np.ndarray:
 
     
     return output      
-
-img = cv.imread("./images/lena_gray_256.tif")
-output = zoom_in_replication(img,3)
-
-cv.imshow("image",img)
-cv.imshow("Output",output)
-cv.waitKey(0)
-cv.destroyAllWindows()
+        

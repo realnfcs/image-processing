@@ -1,12 +1,21 @@
 import numpy as np
-import cv2 as cv
 
-test = "./images/lena_gray_256.tif"
-img = cv.imread(test)
-
-factor = 2
 
 def zoom_out(img:np.ndarray, factor:float)->np.ndarray:
+
+    """
+    Zoom out on the image and returns the results
+ 
+    Args:
+      img : (array_like Shape (m,n)) first image 
+      factor: (integer number) the ampliation factor
+           
+    Returns
+    
+      output: (array_like Shape (m,n)) the output image of zoom out process
+      
+    """
+     
     row,col,ch = img.shape
     
     new_row = int(row / factor)
@@ -31,10 +40,3 @@ def zoom_out(img:np.ndarray, factor:float)->np.ndarray:
     
     return output 
 
-output = zoom_out(img,3)
-
-cv.imshow("image",img)
-cv.imshow("Output",output)
-cv.waitKey(0)
-cv.destroyAllWindows()
-print(img.shape, output.shape)
