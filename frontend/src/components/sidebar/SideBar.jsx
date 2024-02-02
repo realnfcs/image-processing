@@ -25,11 +25,6 @@ const sidebarData = [
   },
 
   {
-    title: "Controle de Contraste Adaptativo",
-    path: "/adaptive-contrast",
-  },
-
-  {
     title: "Transformações Geométricas",
     path: "/geometric",
   },

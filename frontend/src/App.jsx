@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SideBar from './components/sidebar/SideBar.jsx'
 import NavBar from './components/navbar/NavBar.jsx'
 import Home from  './components/home/Home.jsx'
-import AdaptiveContrast from './components/adaptiveContrast/AdaptiveContrast.jsx'
 import Algebraic from './components/algebraic/Algebraic.jsx'
 import Convolution from './components/convolution/Convolution.jsx'
 import EdgeDetectention from './components/edgeDetectention/EdgeDetectention.jsx'
@@ -23,7 +22,6 @@ function App() {
         <SideBar />
       <Routes>
         <Route path='/' element={ <Home /> } />
-        <Route path='/adaptive-contrast' element={ <AdaptiveContrast /> } />
         <Route path='/algebraic' element={ <Algebraic /> } />
         <Route path='/convolution' element={ <Convolution /> } />
         <Route path='/edge-detectention' element={ <EdgeDetectention /> } />

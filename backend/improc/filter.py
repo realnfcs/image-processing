@@ -70,20 +70,12 @@ def median(img: np.ndarray) -> np.ndarray:
                                   
     """
 
-    row, col, cchannel = img.shape
+    row, col = img.shape
 
-    r, g, b = img[:, :, 0], img[:, :, 1], img[:, :, 2]
-
-    output = np.zeros((row, col, cchannel), dtype=np.float32)
-
-    output_r, output_g, output_b = np.zeros(r.shape, dtype=np.float32), np.zeros(g.shape, dtype=np.float32), np.zeros(b.shape, dtype=np.float32)
+    output = np.zeros((row, col), dtype=np.float32)
 
     for i in range(1, row - 1):
         for j in range(1, col - 1):
-            output_r[i, j] = _median(r, i, j)
-            output_g[i, j] = _median(g, i, j)
-            output_b[i, j] = _median(b, i, j)
+            output[i, j] = _median(img, i, j)
     
-    output = np.dstack((output_r, output_g, output_b))
-
     return output.astype(img.dtype)

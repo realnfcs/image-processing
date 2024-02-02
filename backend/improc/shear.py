@@ -1,6 +1,3 @@
-import cv2 as cv
-import numpy as np
-
 import numpy as np
 
 def zoom_out(imagem, escala):
@@ -38,10 +35,3 @@ def shear(img: np.ndarray, s: float) -> np.ndarray:
             output[min(iline, r - 1), j] = nimg[i, j]
 
     return output
-
-img = cv.imread("./images/lena_gray_256.tif")
-output = shear(cv.cvtColor(img, cv.COLOR_RGB2GRAY), 0.3)
-
-cv.imshow("output", output)
-cv.waitKey(0)
-cv.destroyAllWindows()

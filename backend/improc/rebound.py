@@ -17,9 +17,8 @@ def rebound(f:np.ndarray,type:int) -> np.ndarray:
       
     row = f.shape[0]
     col = f.shape[1]
-    ch = f.shape[2]
 
-    output:np.ndarray = np.zeros((row,col,ch), dtype=f.dtype)
+    output:np.ndarray = np.zeros((row,col), dtype=f.dtype)
 
     for i in range(row):
         for j in range(col):

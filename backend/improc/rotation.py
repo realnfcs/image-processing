@@ -16,12 +16,11 @@ def rotation(f:np.ndarray, angle:int):
 
     row = f.shape[0]
     col = f.shape[1]
-    ch = f.shape[2]
 
     ic = row / 2
     jc = col / 2
 
-    output:np.ndarray = np.zeros((row,col,ch), dtype=f.dtype)
+    output:np.ndarray = np.zeros((row,col), dtype=f.dtype)
 
 
     angle_r = np.radians(angle)
@@ -31,8 +30,6 @@ def rotation(f:np.ndarray, angle:int):
             
             il = int(np.round((i - ic) * np.cos(angle_r)) - ((j - jc) * np.sin(angle_r)) + ic)
             jl = int(np.round((i - ic) * np.sin(angle_r)) + ((j - jc) * np.cos(angle_r)) + jc)
-
-            print(np.degrees(np.cos(angle)))
 
             if (il <= row-1 and il > 0) and (jl <= col-1 and jl > 0):
                 output[il,jl] = f[i,j]

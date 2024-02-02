@@ -1,22 +1,5 @@
 from typing import Tuple
 import numpy as np
-import cv2 as cv
-
-from sobel import sobel
-
-def sharpening(f: np.ndarray, t:int, k: float) -> Tuple[np.ndarray, np.ndarray]:
-
-    g = sobel(f, t)
-
-    row, col = f.shape
-
-    output = np.zeros((row, col), dtype=f.dtype)
-
-    for i in range(row):
-        for j in range(col):
-            output[i, j] = f[i, j] + g[i, j]
-
-    return output, g
 
 def sharpening_laplacian(f: np.ndarray, t:int, k: float) -> Tuple[np.ndarray, np.ndarray]:
 
@@ -41,13 +24,3 @@ def sharpening_laplacian(f: np.ndarray, t:int, k: float) -> Tuple[np.ndarray, np
             output[i, j] = f[i, j] + g[i, j]
 
     return output, g
-
-img = cv.imread("./images/lua.jpg")
-#output, g = sharpening_laplacian(cv.cvtColor(img, cv.COLOR_RGB2GRAY), 255, 1)
-output, g = sharpening(cv.cvtColor(img, cv.COLOR_RGB2GRAY), 256, 1)
-
-cv.imshow("output", output)
-cv.imshow("image", img)
-cv.imshow("kernel", g)
-cv.waitKey(0)
-cv.destroyAllWindows()

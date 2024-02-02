@@ -16,13 +16,13 @@ def zoom_out(img:np.ndarray, factor:float)->np.ndarray:
       
     """
      
-    row,col,ch = img.shape
+    row,col = img.shape
     
     new_row = int(row / factor)
     new_col = int(col / factor)
 
 
-    output:np.ndarray = np.zeros((new_row,new_col,ch), dtype=img.dtype)
+    output:np.ndarray = np.zeros((new_row,new_col), dtype=img.dtype)
     
     for i in range(new_row):
         for j in range(new_col):
@@ -35,7 +35,7 @@ def zoom_out(img:np.ndarray, factor:float)->np.ndarray:
 
 
             
-            output[i,j,:] = img[origin_row,origin_col,:]
+            output[i,j] = img[origin_row,origin_col]
 
     
     return output 

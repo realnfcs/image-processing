@@ -18,7 +18,7 @@ function UploadImage({ onInputChange }) {
          type="file" 
          name="image" 
          onChange={handleOnChange} 
-         accept="image/png, image/jpg, image/tif, image/tiff, image/bmp"
+         accept="image/png, image/jpg, image/tif, image/tiff, image/bmp, image/jpeg"
          multiple
       />
     </div>

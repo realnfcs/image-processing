@@ -1,6 +1,4 @@
 import numpy as np
-import cv2 as cv
-import matplotlib.pyplot as plt
 
 def convolution(image: np.ndarray, kernel: np.ndarray):
 
@@ -14,12 +12,3 @@ def convolution(image: np.ndarray, kernel: np.ndarray):
             output[i, j] = np.sum(image[i:i + krow, j:j + kcol] * kernel)
 
     return output
-
-image = cv.imread("./images/lena_gray_256.tif")
-kernel = np.array([[1, 1, 1], [0, 0, 0], [-1, -1, -1]])
-
-output = convolution(cv.cvtColor(image, cv.COLOR_RGB2GRAY), kernel)
-
-plt.imshow(output)
-plt.axis('off')
-plt.show()

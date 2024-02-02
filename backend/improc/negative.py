@@ -14,10 +14,10 @@ def negative(f:np.ndarray) -> np.ndarray:
       
     """
 
-    row, col, _ = f.shape
+    row, col = f.shape
     l = np.max(f)
 
-    output:np.ndarray = np.zeros((row, col, 3), dtype = f.dtype)
+    output:np.ndarray = np.zeros((row, col), dtype = f.dtype)
 
     for i in range(row):
         for j in range(col):

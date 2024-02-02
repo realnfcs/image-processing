@@ -12,7 +12,7 @@ def non_uniform_cross_dissolve(f:np.ndarray, g:np.ndarray, t:np.ndarray) -> np.n
     Args:
       f : (array_like Shape (m,n)) fist image 
       g : (array_like Shape (m,n)) second image 
-      t : (scalar float [0, 1])    constant value for dissolve process      
+      t : (array_like Shape (m,n))      
     Returns
       output: (array_like Shape (m,n)) the image output of uniform closs dissolve process
                                   
@@ -21,8 +21,8 @@ def non_uniform_cross_dissolve(f:np.ndarray, g:np.ndarray, t:np.ndarray) -> np.n
     if f.shape != g.shape:
         raise ValueError("images don't have the same size")
     
-    row, col , cchanell = f.shape
-    output: np.ndarray = np.zeros((row, col, cchanell), dtype = f.dtype)
+    row, col = f.shape
+    output: np.ndarray = np.zeros((row, col), dtype = f.dtype)
 
     for i in range(row):
         for j in range(col):    
@@ -47,9 +47,9 @@ def uniform_closs_dissolve(f: np.ndarray, g: np.ndarray, t: float) -> np.ndarray
     if f.shape != g.shape:
         raise ValueError("images don't have the same size")
 
-    row, col, cchannel = f.shape
+    row, col = f.shape
 
-    output: np.ndarray = np.zeros((row, col, cchannel), dtype=f.dtype)
+    output: np.ndarray = np.zeros((row, col), dtype=f.dtype)
 
     for i in range(row):
         for j in range(col):
