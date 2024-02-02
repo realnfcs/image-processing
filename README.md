@@ -1,7 +1,8 @@
 # image-processing
 
-INTRODUÇÃO
-Contextualização
+## INTRODUÇÃO
+
+### Contextualização
 Em um mundo cada vez mais orientado pela tecnologia onde o campo da
 visão computacional tem se tornado cada vez mais presente, a área de
 processamento de imagens se torna crucial para extrair significados, aprimorar a
@@ -17,7 +18,7 @@ também abre um caminho promissor para criação de tecnologias inovadoras e
 experiências visuais aprimoradas com a melhoria da qualidade de fotos, ou em um
 aumento na taxa de quadros(FPS) que melhora a experiência do jogador em um
 vídeo game.
-Fundamentação teórica
+### Fundamentação teórica
 Conseguimos a partir de agora perceber a importância do processamento de
 imagens, então podemos pensar em quão útil pode ser um aplicativo ou website que
 forneça a nós usuários algumas das várias funcionalidades que as operações de
@@ -36,24 +37,24 @@ de imagens e operações matriciais(OpenCv e Numpy respectivamente) para o
 backend e Javascript com uso de HTML e CSS para o frontend. O website tem
 como objetivo permitir que o usuário insira uma imagem e possa escolher qual
 operação será aplicada na mesma.
-MATERIAIS E MÉTODOS
-Atividades Desenvolvidas
+## MATERIAIS E MÉTODOS
+### Atividades Desenvolvidas
 Durante o projeto foram desenvolvidas atividades práticas de processamento
 de imagens, implementação de algoritmos para tratamento de imagens, análise e
 extração de dados.
-Operações algébricas
+### Operações algébricas
 As primeiras operações a serem implementadas foram as de dissolve
 cruzado uniforme e não-uniforme, essas duas técnicas tem como objetivo
 mesclar duas imagens mas se diferenciam um pouco em termos de cálculo
 pois no caso do dissolve uniforme um dos parâmetros a serem usados é um
 escalar enquanto no dissolve não-uniforme este mesmo parâmetro é uma
 matriz.
-Transformações de intensidade
+### Transformações de intensidade
 Os algoritmos de transformação de intensidade são responsáveis por
 alterar de maneira significativa os valores de intensidade dos pixels de uma
 imagem, invertendo totalmente os seus níveis de cinza como no caso datransformação de negativo, ou aumentando o contraste da imagem como na
 operação de alargamento de contraste.
-Processamento de histograma
+### Processamento de histograma
 Um histograma representa a distribuição estatística de níveis de cinza
 de uma imagem. Operações como a expansão de histograma são usadas
 para produzir uma imagem mais rica visualmente, em alguns casos a
@@ -66,7 +67,7 @@ das operações feitas em cada pixel da imagem de entrada diferentemente da
 equalização de histogramas que é uma operação local, e por isso, cada pixel
 da imagem de saída vai depender de operações feitas nas vizinhanças de
 pixels da imagem de entrada.
-Controle de contraste adaptativo
+### Controle de contraste adaptativo
 Essa técnica de processamento de imagens ajusta o contraste de uma
 imagem de maneira adaptativa, baseando-se em características locais da
 imagem, diferentemente do controle de contraste global que aplica a mesma
@@ -76,7 +77,7 @@ imagem sejam realçadas de diferentes maneiras. Nesta operação é feito um
 cálculo que utiliza a média de um vizinhança de pixel n x n , um desvio de
 padrão de uma vizinhança n x n e um parâmetro responsável por regular a
 intensidade do aumento do contraste.
-Transformações geométricas
+### Transformações geométricas
 Diferentemente das operações de transformação de intensidade, as
 transformações geométricas tem o objetivo de modificar a localização dospixels e não os seus valores de níveis de cinza, nesse grupo estão contidas
 operações de mudança de escala(zoom in e zoom out) que aumentam ou
@@ -90,7 +91,7 @@ imagem transformada, por isso precisamos usar a interpolação para estimar
 os valores de intensidade dos novos pontos criados de acordo com os pontos
 originais, existem diversos tipos de interpolação mas os mais utilizados são a
 interpolação bilinear ou a de vizinho mais próximo(replicação).
-Filtragem linear e não-linear
+### Filtragem linear e não-linear
 A filtragem é uma operação muito comum no processamento de
 imagens e pode ser dividida entre filtragem linear e não-linear, neste projeto
 foram implementados 2 tipos de filtros, o de média e o de mediana.
@@ -102,7 +103,7 @@ processo onde cada pixel de imagem de saída é substituído pela mediana
 dos pixels da sua vizinhança, esse tipo de filtro é muito eficaz para eliminar
 ruídos do tipo “sal e pimenta” e ruídos impulsivos ao mesmo tempo que
 preserva os contornos da imagem.
-Detecção de bordas
+### Detecção de bordas
 A detecção de bordas é uma técnica de processamento de imagens
 capaz de determinar pontos de uma imagem digital onde a intensidade
 luminosa muda de forma brusca. É fortemente usada na área de extração de
@@ -113,7 +114,7 @@ O Gradiente de Sobel é uma operação que calcula o gradiente de
 intensidade em cada ponto de uma imagem dando a direção com maior
 variação entre o claro e o escuro, com isso é possível obter as bordas
 presentes em uma imagem.
-Aguçamento de bordas e High Boost
+### Aguçamento de bordas e High Boost
 Aguçamento de bordas é uma técnica que visa melhorar a nitidez de
 uma imagem através da intensificação das transições de intensidade
 luminosa(bordas), ela é muito útil para destacar detalhes e estruturas finas
@@ -125,14 +126,14 @@ Já quando falamos de High Boost, podemos dizer que ele é uma
 extensão do filtro de aguçamento, ele é usado para realçar detalhes de alta
 frequência e outras transições abruptas de intensidade adicionando uma
 fração amplificada da imagem original a imagem suavizada.
-Convolução
+### Convolução
 É uma operação matemática fundamental no processamento de
 imagens usada para aplicar filtros a uma imagem. Essa técnica envolve a
 multiplicação de cada elemento da máscara pelo valor correspondente a ele
 na imagem, a soma desses resultados será o novo valor de intensidade na
 imagem de saída. No caso deste projeto foi utilizado offset, o offset determina
 o quanto a máscara vai se deslocar na imagem.
-Ferramentas utilizadas
+### Ferramentas utilizadas
 A implementação do projeto foi dividida em duas áreas principais, a área de front
 end, responsável pelo contato direto com o usuário para escolha de operações einserção de imagens, e back end, responsável por realizar todas as operações já
 mostradas e devolver ao usuário o resultado esperado.
@@ -158,7 +159,7 @@ operações que envolvessem matrizes, como por exemplo a criação de
 matrizes n x n totalmente zeradas. Cabe citar também que em alguns
 momentos foram utilizadas as linguagens MATLAB e Octave apenas para
 efeitos de comparação com as operações feitas com Python.
-Front end
+### Front end
 O Front end é a parte do sistema responsável por interagir diretamente
 com o usuário, e neste projeto foram usados o React, o Node e o Npm.
 O React é uma biblioteca JavaScript para criação de interfaces de
@@ -179,18 +180,18 @@ operações de processamento de imagens, todo o conhecimento aplicado na prátic
 com o uso das ferramentas já citadas foram adquiridos através dos materiais
 fornecidos pelo próprio professor, somente com os slides das aulas ministradas em
 sala de aula foram suficientes para possibilitar a implementação.
-RESULTADOS
+## RESULTADOS
 Os resultados obtidos são extremamente satisfatórios, o sistema desenvolvido trás
 uma boa proposta de interação com o usuário que pode escolher qual operação
 será executada além de poder inserir as imagens que vão receber as
 transformações. As operações tem um ótimo desempenho e retornam ao usuário o
 resultado esperado proporcionando uma ótima experiência de uso
-DISCUSSÃO
+## DISCUSSÃO
 Mesmo com bons resultados, deve-se esclarecer que nem todas as funções foram
 executadas com êxito, as operações de Pinch Vertical e Warping baseado em
 campos não desempenharam o seu papel da maneira correta, a sua implementaçãose deu através dos slides disponibilizados durante a aula mas mesmo assim não
 houve sucesso.
-CONCLUSÃO
+## CONCLUSÃO
 Diante do cenário apresentado é totalmente evidente que o processamento de
 imagens desempenha um papel fundamental nos dias atuais, atuando em conjunto
 com técnicas de aprendizado de máquina e possibilitando o avanço de tecnologias
