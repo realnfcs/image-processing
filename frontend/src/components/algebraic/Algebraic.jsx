@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UploadImage from "../uploadImage/UploadImage.jsx";
 
 function Algebraic() {
 
    const [images, setImages] = useState()
+   const [resImage, setResImage] = useState()
+
+   useEffect(() => {
+    console.log("resImage State: ", resImage)
+   }, [resImage])
 
    function handleInputChange(values) {
       console.log("values", values)
@@ -30,7 +35,18 @@ function Algebraic() {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      if (data && data.image) {
+        fetch(`http://localhost:5000/images/${data.image}`)
+        .then(response => { 
+          return response.blob()
+        })
+        .then(blob => {
+            const imageUrl = URL.createObjectURL(blob);
+            return imageUrl
+        })
+        .then(image => setResImage(image))
+        .catch(error => console.error('Erro ao carregar a nova imagem:', error));
+      }
     })
     .catch(error => {
       console.log("erro", error)
@@ -55,6 +71,9 @@ function Algebraic() {
         </div>
         <input type="submit" />
       </form>
+      {resImage && (
+        <img src={resImage} key={resImage} />
+      )}
     </div>
   );
 }
