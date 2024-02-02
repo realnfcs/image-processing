@@ -6,6 +6,7 @@ function Algebraic() {
    const [images, setImages] = useState()
 
    function handleInputChange(values) {
+      console.log("values", values)
       setImages(values) 
    }
 
@@ -13,9 +14,27 @@ function Algebraic() {
     e.preventDefault();
 
     const formData = new FormData(e.target);
+
+    // Adicionando arquivos ao FormData
+    images.forEach((file, index) => {
+      formData.append(`file${index + 1}`, file);
+    });
+
     const payload = Object.fromEntries(formData)
 
     console.log(payload, images);
+
+    fetch('http://localhost:5000/upload', {
+      method: 'POST',
+      body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => {
+      console.log("erro", error)
+    })
   }
 
   return (
