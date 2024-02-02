@@ -1,0 +1,12 @@
+.dropzone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 360px;
+}
+
+.preview {
+    max-height: 360px;
+    max-width: 360px;
+}

@@ -16,9 +16,9 @@ def avg(img: np.ndarray) -> np.ndarray:
                                   
     """
 
-    row, col, cchannel = img.shape
+    row, col = img.shape
 
-    output = np.zeros((row, col, cchannel), dtype=np.float32)
+    output = np.zeros((row, col), dtype=np.float32)
 
     mask = np.ones((3, 3), dtype=np.float32) / 9
 
