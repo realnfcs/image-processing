@@ -3,7 +3,7 @@ import numpy as np
 
 def pinch(f:np.ndarray, fmax:float, ip:int ) -> np.ndarray:
     """
-    Apply the histogram equalization to the histogram of the inserted image
+    Apply the vertical pinch in the inserted image
  
     Args:
       f : (array_like Shape (m,n)) first image  
