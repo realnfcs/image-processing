@@ -137,7 +137,7 @@ o quanto a máscara vai se deslocar na imagem.
 A implementação do projeto foi dividida em duas áreas principais, a área de front
 end, responsável pelo contato direto com o usuário para escolha de operações einserção de imagens, e back end, responsável por realizar todas as operações já
 mostradas e devolver ao usuário o resultado esperado.
-Back end
+### Back end
 No back end estão organizadas as implementações de todas as
 operações de processamento de imagens já mostradas anteriormente, a
 linguagem de programação usada foi o Python3, junto a ela foram utilizadas
